@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RedxGuy Scripts</title>
+<style>
+body {
+  margin: 0;
+  padding: 20px;
+  background: #0b0b0f;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+header {
+  text-align: center;
+  color: #ff3030;
+  padding: 20px 0;
+}
+.card {
+  background: #191919;
+  border: 1px solid #ff3030;
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 24px;
+}
+pre {
+  background: #080808;
+  color: #ff7777;
+  padding: 14px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+button {
+  background: #e32636;
+  color: white;
+  border: 0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>⚡ RedxGuy Scripts</h1>
+  <p>My Lua Script Library</p>
+</header>
+
+<div class="card">
+  <h2>My First Lua Script</h2>
+  <p>Simple Lua example</p>
+  <pre id="script">print("Hello from RedxGuy!")</pre>
+  <button onclick="copyScript()">📋 Copy Script</button>
+  <p id="status"></p>
+</div>
+
+<script>
+async function copyScript() {
+  const code = document.getElementById("script").textContent;
+  try {
+    await navigator.clipboard.writeText(code);
+    document.getElementById("status").textContent = "Copied!";
+  } catch (e) {
+    document.getElementById("status").textContent =
+      "Select the code and copy manually.";
+  }
+}
+</script>
+</body>
+</html>
